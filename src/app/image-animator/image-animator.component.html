@@ -1,0 +1,25 @@
+<div
+  class="animation-container"
+  (panright)="panRight($event)"
+  (panleft)="panLeft($event)"
+>
+  <div *ngIf="this.backgroundFrames.length != 0" class="background-image-container">
+    <img
+      class="background-image"
+      *ngFor="let frame of backgroundFrames; let indexOfElement= index"
+      [src]="frame.src"
+      alt="image{{indexOfElement}}"
+      [style.display]="imageAnimatorService.getFrameVisibility(indexOfElement) ? 'inline' : 'none'"
+      draggable="false"
+    >
+  </div>
+  <img
+    class="object-image"
+    *ngFor="let frame of imageFrames; let indexOfElement= index"
+    [src]="frame.src"
+    alt="image{{indexOfElement}}"
+    [style.display]="imageAnimatorService.getFrameVisibility(indexOfElement) ? 'inline' : 'none'"
+    draggable="false"
+    >
+  <ckt-animation-slider></ckt-animation-slider>
+</div>

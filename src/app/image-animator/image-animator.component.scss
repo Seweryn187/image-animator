@@ -1,0 +1,50 @@
+@mixin containerDimensions {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin imageDimensions {
+  width: 100%;
+  height: auto;
+}
+
+@mixin place {
+  top: 0;
+  left: 0;
+}
+
+@mixin interactionOptions {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.animation-container {
+  @include containerDimensions;
+}
+
+.background-image-container{
+  @include containerDimensions;
+}
+
+.background-image {
+  position: relative;
+  @include place;
+  @include imageDimensions;
+  @include interactionOptions;
+  overflow: hidden;
+  object-fit: fill;
+  z-index: 0;
+}
+
+.object-image {
+  position: absolute;
+  @include place;
+  @include imageDimensions;
+  @include interactionOptions;
+  overflow: hidden;
+  object-fit: fill;
+  z-index: 1;
+}

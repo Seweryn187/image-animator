@@ -1,0 +1,9 @@
+<div class="slider-container">
+  <mat-slider
+    [ngModel]="imageAnimatorService.getActiveFrame()"
+    (input)="imageAnimatorService.handleSliderChange($event)"
+    [min]="0"
+    [max]="imageAnimatorService.getNumberOfFrames()"
+  ></mat-slider>
+</div>
+
